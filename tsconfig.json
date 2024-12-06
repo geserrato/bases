@@ -120,6 +120,6 @@
     "node_modules2"
   ],
   "include": [
-    "clases"
+    "interfaces"
   ]
 }

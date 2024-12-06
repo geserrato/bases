@@ -1,72 +1,47 @@
 "use strict";
 (() => {
-    class Mutante {
-        constructor(name, realName) {
+    let flash = {
+        name: "Barry Allen",
+        age: 24,
+        powers: ["speed", "time travel"],
+    };
+    let superman = {
+        name: "Clark Kent",
+        age: 500,
+        powers: ["super strength"],
+        getName() {
+            return this.name;
+        },
+    };
+})();
+(function () {
+    class Mutant {
+        constructor(age, name, realName) {
+            this.age = age;
             this.name = name;
             this.realName = realName;
         }
-    }
-    class Xmen extends Mutante {
-        saveTheWorld() {
-            console.log("Saved world!");
+        mutantPower(id) {
+            throw new Error("Method not implemented.");
         }
     }
-    class Villian extends Mutante {
-        conquerTheWorld() {
-            console.log("Conquered world!");
-        }
-    }
-    const wolverine = new Xmen("Wolverine", "Logan");
-    const magneto = new Villian("Magneto", "Magnus");
-    const printName = (character) => {
-        console.log(character.name);
+})();
+(() => {
+    const client = {
+        name: "Gerardo",
+        age: 33,
+        address: {
+            id: 125,
+            zip: "kerr",
+            city: "Ottawa",
+        },
+        getFullAdress(id) { },
     };
 })();
 (() => {
-    class Avenger {
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
-        }
-        getFullName() {
-            return `${this.name} ${this.realName}`;
-        }
-    }
-    class Xmen extends Avenger {
-        constructor(name, realName, isMutant) {
-            super(name, realName);
-            this.isMutant = isMutant;
-        }
-        getFullNameFromXmen() {
-        }
-        get fullName() {
-            return `${this.name} ${this.realName}`;
-        }
-        set fullName(name) {
-            if (name.length < 3) {
-                throw new Error("El nombre debe tener al menos 3 caracteres");
-            }
-            this.name = name;
-        }
-    }
-    const wolverine = new Xmen("Wolverine", "Logan", true);
-    wolverine.fullName = "Ciclope";
-})();
-(() => {
-    class Apocalipsis {
-        constructor(name) {
-            this.name = name;
-        }
-        static callApocalipsis() {
-            if (!Apocalipsis.instance) {
-                Apocalipsis.instance = new Apocalipsis("Soy Apocalipsis... el único");
-            }
-            return Apocalipsis.instance;
-        }
-    }
-    const apocalipsis1 = Apocalipsis.callApocalipsis();
-    const apocalipsis2 = Apocalipsis.callApocalipsis();
-    console.log(apocalipsis1);
-    console.log(apocalipsis2);
+    let addNumbersFunction;
+    addNumbersFunction = (a, b) => {
+        return 10;
+    };
 })();
 //# sourceMappingURL=main.js.map
